@@ -16,7 +16,7 @@ public class DB_connection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Connection successful!");
+           // System.out.println("Connection successful!");
         } catch (ClassNotFoundException e) {
             System.out.println("MySQL JDBC Driver not found!");
             e.printStackTrace();
@@ -28,14 +28,14 @@ public class DB_connection {
         return connection;
     }
 
-    public static void main(String[] args) {
-        try {
-
-            Connection connection = DB_connection.getConnection();
-
-        } catch (SQLException e) {
-            // Handle the exception
-            System.out.println("Failed to create the database connection.");
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//
+//            Connection connection = DB_connection.getConnection();
+//
+//        } catch (SQLException e) {
+//            // Handle the exception
+//            System.out.println("Failed to create the database connection.");
+//        }
+//    }
 }

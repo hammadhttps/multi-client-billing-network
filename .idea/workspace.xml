@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/main/DB/DB_connection.java" afterDir="false" />
+    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="added all Model classes">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/main/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/emp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/customer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/emp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/main/DB/DB_connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/main/DB/DB_connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/firstpage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Client/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/Firstpage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -55,18 +66,40 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Client.executor": "Run",
     "Application.DB_connection.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.Server.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/new downloads/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar",
+    "last_opened_file_path": "C:/Users/city/Desktop/java/multi-client-billing-network",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Client.Client" />
+      <module name="multi-client-billing-network" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -84,11 +117,29 @@
       <option name="project" value="LOCAL" />
       <updated>1733345950935</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DB connection established">
+      <option name="closed" value="true" />
+      <created>1733348413837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733348413837</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added all Model classes">
+      <option name="closed" value="true" />
+      <created>1733349138876</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733349138876</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="DB connection established" />
+    <MESSAGE value="added all Model classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added all Model classes" />
   </component>
 </project>
