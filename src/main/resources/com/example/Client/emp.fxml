@@ -2,9 +2,22 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Client.controller.emp">
+<AnchorPane prefHeight="572.0" prefWidth="758.0" stylesheets="@style1.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Client.controller.emp">
    <children>
-      <Button layoutX="235.0" layoutY="37.0" mnemonicParsing="false" onAction="#changepass" prefHeight="46.0" prefWidth="107.0" text="Change Pasword" />
+      <Button layoutX="423.0" layoutY="143.0" mnemonicParsing="false" onAction="#changepass" prefHeight="46.0" prefWidth="107.0" style="-fx-background-color: green;" text="Change Pasword" />
+      <Button layoutX="423.0" layoutY="226.0" mnemonicParsing="false" onAction="#update_customer_data" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color: black;" text="Update Customer Data" />
+      <Button layoutX="423.0" layoutY="304.0" mnemonicParsing="false" onAction="#add_new_customer" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: navy;" text="Add new Customer" />
+      <Button layoutX="177.0" layoutY="143.0" mnemonicParsing="false" onAction="#view_bill" prefHeight="46.0" prefWidth="95.0" style="-fx-background-color: red; -fx-cursor: p;" text="View BiLL" />
+      <Button layoutX="177.0" layoutY="226.0" mnemonicParsing="false" onAction="#generate_report" prefHeight="52.0" prefWidth="120.0" style="-fx-background-color: purple;" text="Generate Report" />
+      <Button layoutX="177.0" layoutY="304.0" mnemonicParsing="false" onAction="#update_tax_tariff" prefHeight="52.0" prefWidth="120.0" style="-fx-background-color: brown;" text="Update tax tariff" />
+      <Button layoutX="177.0" layoutY="389.0" mnemonicParsing="false" onAction="#add_Billing" prefHeight="52.0" prefWidth="128.0" style="-fx-background-color: darkgreen;" text="Add Billing Month" />
+      <Button layoutX="423.0" layoutY="389.0" mnemonicParsing="false" onAction="#update_status" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: maroon;" text="Update Payment Status" />
+      <Label alignment="CENTER" layoutX="283.0" layoutY="27.0" prefHeight="63.0" prefWidth="165.0" text="Employee">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

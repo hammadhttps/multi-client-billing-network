@@ -1,0 +1,102 @@
+/* Set the AnchorPane to use Flexbox */
+.AnchorPane {
+    -fx-layout: flex;
+    -fx-flex-direction: column; /* Stack buttons vertically */
+    -fx-align-items: center; /* Center buttons horizontally */
+    -fx-justify-content: center; /* Center buttons vertically */
+    -fx-background-color: #f9f9f9; /* Light background color for the pane */
+}
+
+/* Style for the buttons */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 190px;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px;
+    -fx-alignment: center;
+    -fx-text-fill: white; /* Set text color to white */
+    -fx-background-radius: 8px; /* Rounded corners */
+    -fx-effect: innershadow(gaussian, black, 5, 0, 1, 1); /* Shadow effect */
+    -fx-transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Different colors for each button */
+#changepass {
+    -fx-background-color: #007bff; /* Blue for change password */
+}
+
+#changepass:hover {
+    -fx-background-color: #0056b3; /* Darker blue for hover */
+}
+
+#update_customer_data {
+    -fx-background-color: #f39c12; /* Amber for update customer data */
+}
+
+#update_customer_data:hover {
+    -fx-background-color: #e67e22; /* Darker amber for hover */
+}
+
+#add_new_customer {
+    -fx-background-color: #1abc9c; /* Turquoise for add new customer */
+}
+
+#add_new_customer:hover {
+    -fx-background-color: #16a085; /* Darker turquoise for hover */
+}
+
+#view_bill {
+    -fx-background-color: #e74c3c; /* Red for view bill */
+}
+
+#view_bill:hover {
+    -fx-background-color: #c0392b; /* Darker red for hover */
+}
+
+#generate_report {
+    -fx-background-color: #8e44ad; /* Purple for generate report */
+}
+
+#generate_report:hover {
+    -fx-background-color: #9b59b6; /* Darker purple for hover */
+}
+
+#update_tax_tariff {
+    -fx-background-color: #27ae60; /* Green for update tax tariff */
+}
+
+#update_tax_tariff:hover {
+    -fx-background-color: #2ecc71; /* Lighter green for hover */
+}
+
+#add_billing {
+    -fx-background-color: #3498db; /* Blue for add billing */
+}
+
+#add_billing:hover {
+    -fx-background-color: #2980b9; /* Darker blue for hover */
+}
+
+#update_status {
+    -fx-background-color: #f39c12; /* Amber for update payment status */
+}
+
+#update_status:hover {
+    -fx-background-color: #e67e22; /* Darker amber for hover */
+}
+
+/* Styling for the label */
+.Label {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 32px;
+    -fx-text-fill: #2c3e50; /* Dark color for the text */
+    -fx-background-color: #ecf0f1; /* Light background */
+    -fx-padding: 10px;
+    -fx-alignment: center;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, #bdc3c7, 10, 0, 0, 5); /* Soft shadow effect */
+}

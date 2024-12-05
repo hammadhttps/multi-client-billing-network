@@ -39,4 +39,32 @@ public class emp {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    public void add_new_customer(ActionEvent actionEvent)
+    {
+
+    }
+
+    public void update_customer_data(ActionEvent actionEvent)
+    {
+
+    }
+
+    public void generate_report(ActionEvent actionEvent) {
+    }
+
+    public void update_tax_tariff(ActionEvent actionEvent) {
+    }
+
+    public void add_Billing(ActionEvent actionEvent)
+    {
+    }
+
+    public void update_status(ActionEvent actionEvent) {
+    }
+
+    public void view_bill(ActionEvent actionEvent)
+    {
+
+    }
 }

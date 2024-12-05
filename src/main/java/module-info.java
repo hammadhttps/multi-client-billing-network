@@ -8,6 +8,7 @@ module com.example.Client {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires mysql.connector.j;
+    requires jdk.compiler;
 
     opens com.example.Client to javafx.fxml;
     exports com.example.Client;

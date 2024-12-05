@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="establishing client-server connection to controllers">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/changepass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/changepass.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/login.fxml" afterDir="false" />
+    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="added change Password functionality in employee">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/NewCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/new_customer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/style1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/main/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/main/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/emp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/emp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/firstpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/firstpage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Client/emp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/emp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733422281238</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added change Password functionality in employee">
+      <option name="closed" value="true" />
+      <created>1733434461148</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733434461148</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,6 +162,7 @@
     <MESSAGE value="added all Model classes" />
     <MESSAGE value="established client-server connection" />
     <MESSAGE value="establishing client-server connection to controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="establishing client-server connection to controllers" />
+    <MESSAGE value="added change Password functionality in employee" />
+    <option name="LAST_COMMIT_MESSAGE" value="added change Password functionality in employee" />
   </component>
 </project>

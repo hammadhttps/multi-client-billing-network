@@ -1,6 +1,7 @@
 package Server.main;
 
 import com.example.Client.model.Employee;
+import com.sun.source.tree.WhileLoopTree;
 
 import java.io.*;
 import java.net.Socket;
@@ -84,16 +85,18 @@ public class ClientHandler implements Runnable {
             sendResponse("An error occurred while processing your request.");
         }
 
-        String command = (String) input.readObject();
-        switch (command) {
-            case "Change Password":
-                changePassword(emp);
-                break;
-            case "Employee":
+        while (true) {
+            String command = (String) input.readObject();
+            switch (command) {
+                case "Change Password":
+                    changePassword(emp);
+                    break;
+                case "View Bill":
 
-                break;
-            default:
-                break;
+                    break;
+                default:
+                    break;
+            }
         }
 
     }
