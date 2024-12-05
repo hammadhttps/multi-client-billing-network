@@ -1,6 +1,8 @@
 package com.example.Client.model;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
     private String username;
     private String password;
 
@@ -16,6 +18,11 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getPassword()
+    {
+        return password;
+    }
+
 
     public boolean authenticate(String password) {
         return this.password.equals(password);

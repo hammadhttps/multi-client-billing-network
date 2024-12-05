@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="676.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Client.controller.changepass">
+   <children>
+      <Label layoutX="97.0" layoutY="179.0" prefHeight="37.0" prefWidth="66.0" text="Username">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="97.0" layoutY="228.0" prefHeight="37.0" prefWidth="66.0" text="Password">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usnmae" layoutX="195.0" layoutY="185.0" prefHeight="25.0" prefWidth="168.0" />
+      <PasswordField fx:id="pass" layoutX="195.0" layoutY="234.0" prefHeight="25.0" prefWidth="168.0" />
+      <Label layoutX="84.0" layoutY="282.0" prefHeight="37.0" prefWidth="92.0" text="New Password">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="newpass" layoutX="195.0" layoutY="288.0" prefHeight="25.0" prefWidth="168.0" />
+      <Button layoutX="212.0" layoutY="388.0" mnemonicParsing="false" onAction="#changepass" prefHeight="37.0" prefWidth="112.0" text="Change Password" />
+   </children>
+</AnchorPane>

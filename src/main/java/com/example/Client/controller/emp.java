@@ -1,6 +1,11 @@
 package com.example.Client.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,19 +17,26 @@ public class emp {
     private ObjectInputStream input;
     private Socket socket;
 
-    // Reuse the connection set from the firstpage controller
+    // Reuse the connection set from the Login controller
     public void setConnection(Socket socket, ObjectOutputStream output, ObjectInputStream input) {
         this.socket = socket;
         this.output = output;
         this.input = input;
     }
 
-    public void click(ActionEvent actionEvent) {
-        try {
-            output.writeObject("Employee");
-            output.flush();
-        } catch (IOException e) {
-            System.err.println("Failed to send data to server: " + e.getMessage());
-        }
+    public void changepass(ActionEvent actionEvent) throws IOException {
+        // Logic for change password functionality
+        output.writeObject("Change Password");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/changepass.fxml"));
+        Parent root = loader.load();
+
+        // Pass the connection to emp controller
+        changepass empController = loader.getController();
+        empController.setConnection(socket, output, input);
+
+        // Switch the scene
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

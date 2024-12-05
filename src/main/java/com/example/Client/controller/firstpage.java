@@ -45,12 +45,12 @@ public class firstpage {
     @FXML
     private void goToEmployee(ActionEvent event) throws IOException {
         // Load Employee FXML and set its controller manually
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/emp.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/login.fxml"));
         Parent root = loader.load();
 
         // Set connection for the Employee controller
-        emp empController = loader.getController();
-        empController.setConnection(socket, output, input);
+        Login controller = loader.getController();
+        controller.setConnection(socket, output, input);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
