@@ -1,7 +1,7 @@
 package Server.main;
 
+import com.example.Client.model.BillingInfo;
 import com.example.Client.model.Employee;
-import com.sun.source.tree.WhileLoopTree;
 
 import java.io.*;
 import java.net.Socket;
@@ -33,18 +33,23 @@ public class ClientHandler implements Runnable {
             while (true) {
                 // Read and handle commands from the client
                 String command = (String) input.readObject();
-                System.out.println("Received: " + command);
+                System.out.println("Received command: " + command);
 
                 switch (command) {
                     case "Customer":
                         handleCustomer();
                         break;
                     case "Employee":
-                        Employee emp = (Employee) input.readObject();
-                        handleLogin(emp);
+                        handleEmployeeLogin();
+                        break;
+                    case "View Bill":
+                        viewBill();
+                        break;
+                    case "View Reports":
+
                         break;
                     default:
-                        System.out.println("Unknown command: " + command);
+                        sendResponse("Unknown command: " + command);
                         break;
                 }
             }
@@ -57,12 +62,12 @@ public class ClientHandler implements Runnable {
         }
     }
 
-    // Handle login logic
-    private void handleLogin(Employee emp) throws IOException, ClassNotFoundException {
+    private void handleEmployeeLogin() throws IOException, ClassNotFoundException {
+        Employee emp = (Employee) input.readObject();
         String username = emp.getUsername();
-        String password =  emp.getPassword();
+        String password = emp.getPassword();
 
-        if (password == null) {
+        if (password == null || username == null || username.isEmpty()) {
             sendResponse("Invalid credentials. Please try again.");
             return;
         }
@@ -81,52 +86,48 @@ public class ClientHandler implements Runnable {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Database error: " + e.getMessage());
+            System.err.println("Database error during login: " + e.getMessage());
             sendResponse("An error occurred while processing your request.");
         }
-
-        while (true) {
-            String command = (String) input.readObject();
-            switch (command) {
-                case "Change Password":
-                    changePassword(emp);
-                    break;
-                case "View Bill":
-
-                    break;
-                default:
-                    break;
-            }
-        }
-
     }
 
-    private void changePassword(Employee emp) throws IOException, ClassNotFoundException {
-        // Receive username
-        String username = emp.getUsername();
-        // Receive new password
-        String newPassword = (String) input.readObject();
-
-        if (newPassword == null || newPassword.isEmpty()) {
-            sendResponse("Password cannot be empty. Please try again.");
+    private void viewBill() throws IOException, ClassNotFoundException {
+        String cusId = (String) input.readObject();
+        if (cusId == null || cusId.isEmpty()) {
+            sendResponse("Customer ID cannot be empty.");
             return;
         }
 
-        String updateQuery = "UPDATE employee SET password = ? WHERE username = ?";
-        try (PreparedStatement stmt = dbConnection.prepareStatement(updateQuery)) {
-            stmt.setString(1, newPassword);
-            stmt.setString(2, username);
+        String query = "SELECT * FROM billinginfo WHERE customerId = ?";
+        try (PreparedStatement stmt = dbConnection.prepareStatement(query)) {
+            stmt.setString(1, cusId);
 
-            int rowsUpdated = stmt.executeUpdate();
-            if (rowsUpdated > 0) {
-                sendResponse("Password updated successfully");
-                System.out.println("Password updated for user: " + username);
-            } else {
-                sendResponse("Failed");
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    BillingInfo bill = new BillingInfo(
+                            rs.getString("customerId"),
+                            rs.getString("billingMonth"),
+                            rs.getInt("currentMeterReadingRegular"),
+                            rs.getInt("currentMeterReadingPeak"),
+                            rs.getString("readingEntryDate"),
+                            rs.getDouble("costOfElectricity"),
+                            rs.getDouble("salesTaxAmount"),
+                            rs.getDouble("fixedCharges"),
+                            rs.getDouble("totalBillingAmount"),
+                            rs.getString("billPaidStatus"),
+                            rs.getString("billPaymentDate") // Handles NULL for unpaid bills
+                    );
+                    output.writeObject(bill); // Send the BillingInfo object
+                    output.flush();
+                } else {
+                    output.writeObject("No billing information found for Customer ID: " + cusId);
+                    output.flush();
+                }
             }
         } catch (SQLException e) {
-            System.err.println("Database error while updating password: " + e.getMessage());
-            sendResponse("An error occurred while updating your password. Please try again later.");
+            System.err.println("Database error during bill retrieval: " + e.getMessage());
+            output.writeObject("Error while fetching billing info.");
+            output.flush();
         }
     }
 
@@ -143,7 +144,7 @@ public class ClientHandler implements Runnable {
 
     private void handleCustomer() {
         System.out.println("Handling customer...");
-        // Add logic to handle customer operations
+        // Placeholder for customer-specific logic
     }
 
     private void closeResources() {

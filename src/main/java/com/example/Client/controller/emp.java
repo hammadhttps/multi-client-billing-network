@@ -25,7 +25,7 @@ public class emp {
     }
 
     public void changepass(ActionEvent actionEvent) throws IOException {
-        // Logic for change password functionality
+
         output.writeObject("Change Password");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/changepass.fxml"));
         Parent root = loader.load();
@@ -63,8 +63,20 @@ public class emp {
     public void update_status(ActionEvent actionEvent) {
     }
 
-    public void view_bill(ActionEvent actionEvent)
-    {
+    public void view_bill(ActionEvent event) throws IOException {
+
+        output.writeObject("View Bill");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/bill.fxml"));
+        Parent root = loader.load();
+
+        // Pass the connection to emp controller
+        Bill empController = loader.getController();
+        empController.setConnection(socket, output, input);
+
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+
 
     }
 }
