@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="526.0" prefWidth="821.0" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Client.controller.StatusUpdate">
+   <children>
+      <Pane layoutX="99.0" layoutY="43.0" prefHeight="426.0" prefWidth="598.0">
+         <children>
+            <Label layoutX="153.0" layoutY="164.0" prefHeight="32.0" prefWidth="128.0" text="Customer ID">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cus_id" layoutX="299.0" layoutY="160.0" prefWidth="200.0" />
+            <Button layoutX="233.0" layoutY="302.0" mnemonicParsing="false" onAction="#update" prefHeight="51.0" prefWidth="115.0" text="Update Status">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="169.0" layoutY="35.0" prefHeight="49.0" prefWidth="305.0" text="Bill Status Update">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

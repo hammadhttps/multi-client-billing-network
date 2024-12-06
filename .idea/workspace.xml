@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="added the functionalites  of employee">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/Bill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/bill.fxml" afterDir="false" />
+    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="added the viewBill  in employee">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/StatusUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/status_update.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/style2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/main/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/main/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/emp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/emp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/model/BillingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/model/BillingInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733436972240</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added the viewBill  in employee">
+      <option name="closed" value="true" />
+      <created>1733442494710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733442494710</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -170,6 +178,7 @@
     <MESSAGE value="establishing client-server connection to controllers" />
     <MESSAGE value="added change Password functionality in employee" />
     <MESSAGE value="added the functionalites  of employee" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the functionalites  of employee" />
+    <MESSAGE value="added the viewBill  in employee" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the viewBill  in employee" />
   </component>
 </project>

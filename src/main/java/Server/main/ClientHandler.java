@@ -26,7 +26,6 @@ public class ClientHandler implements Runnable {
             System.err.println("Error initializing streams: " + e.getMessage());
         }
     }
-
     @Override
     public void run() {
         try {
@@ -46,7 +45,10 @@ public class ClientHandler implements Runnable {
                         viewBill();
                         break;
                     case "View Reports":
-
+                       view_reports();
+                        break;
+                    case "Update Status":
+                        update_status();
                         break;
                     default:
                         sendResponse("Unknown command: " + command);
@@ -60,6 +62,44 @@ public class ClientHandler implements Runnable {
         } finally {
             closeResources();
         }
+    }
+
+    public void update_status() throws IOException, ClassNotFoundException {
+        // Receive the customer ID from the client
+        String customerId = (String) input.readObject();
+
+        if (customerId == null || customerId.isEmpty()) {
+            sendResponse("Customer ID is invalid!");
+            return;
+        }
+
+        // SQL query to update billing info
+        String query = "UPDATE billinginfo " +
+                "SET billPaidStatus = 'Paid', billPaymentDate = CURRENT_DATE " +
+                "WHERE customerId = ?";
+
+        try (PreparedStatement stmt = dbConnection.prepareStatement(query)) {
+            stmt.setString(1, customerId);
+
+            // Execute the update query
+            int rowsUpdated = stmt.executeUpdate();
+
+            // Respond to the client
+            if (rowsUpdated > 0) {
+                sendResponse("Status updated successfully for Customer ID: " + customerId);
+            } else {
+                sendResponse("No billing record found for Customer ID: " + customerId);
+            }
+        } catch (SQLException e) {
+            System.err.println("Database error during status update: " + e.getMessage());
+            sendResponse("An error occurred while updating the status. Please try again.");
+        }
+    }
+
+
+    private void view_reports()
+    {
+
     }
 
     private void handleEmployeeLogin() throws IOException, ClassNotFoundException {
