@@ -27,12 +27,19 @@ public class firstpage {
 
     @FXML
     private void goToCustomer(ActionEvent event) throws IOException {
-        // Load Customer FXML without passing connection (if not needed)
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/Client/customer.fxml"));
+        // Correct way to load the FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/customer.fxml"));
+        Parent root = loader.load();  // This loads the FXML file into 'root'
+
+        // Get the controller from the loaded FXML
+        customer controller = loader.getController();
+        controller.setConnection(socket, output, input);
+
+        // Set the scene on the current stage
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
 
-        // Send command to server
+        // Send the command to the server
         try {
             output.writeObject("Customer");
         } catch (IOException e) {
@@ -41,6 +48,7 @@ public class firstpage {
 
         stage.show();
     }
+
 
     @FXML
     private void goToEmployee(ActionEvent event) throws IOException {

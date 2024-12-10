@@ -49,6 +49,24 @@ public class StatusUpdate {
         }
     }
 
+    public String updateCustomerId(String customerId) {
+        if (customerId == null || customerId.isEmpty()) {
+            return "Customer ID cannot be empty!";
+        }
+
+        try {
+            output.writeObject(customerId);  // Send customer ID
+            output.flush();
+
+            // Wait for the server's response
+            String response = (String) input.readObject();
+            return response;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed to update status: " + e.getMessage();
+        }
+    }
+
     // Helper method to show alerts
     private void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);

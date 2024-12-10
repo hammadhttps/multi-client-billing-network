@@ -50,6 +50,12 @@ public class ClientHandler implements Runnable {
                     case "Update Status":
                         update_status();
                         break;
+                    case"view Current Bill":
+
+                        break;
+
+                    case"Update Expiry":
+                        break;
                     default:
                         sendResponse("Unknown command: " + command);
                         break;

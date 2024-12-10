@@ -13,7 +13,7 @@ import java.net.Socket;
 public class Bill {
 
     @FXML
-    private TextField cus_id;
+    public TextField cus_id;
 
     private ObjectOutputStream output;
     private ObjectInputStream input;

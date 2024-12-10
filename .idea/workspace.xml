@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="added the viewBill  in employee">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/StatusUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/status_update.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/style2.css" afterDir="false" />
+    <list default="true" id="97a46cdb-ba39-4a1c-97a6-b825bda79351" name="Changes" comment="added the bill_status_update in employee">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/main/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/main/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/emp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/emp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/StatusUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/StatusUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/firstpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Client/controller/firstpage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Client/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/Client/customer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,18 +32,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "hammadhttps"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hammadhttps&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/hammadhttps/multi-client-billing-network.git",
-    "accountId": "9688958d-4b22-4e69-bac8-8ee4bb0fe7aa"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hammadhttps/multi-client-billing-network.git&quot;,
+    &quot;accountId&quot;: &quot;9688958d-4b22-4e69-bac8-8ee4bb0fe7aa&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -47,10 +51,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2plfUf4c0JxrNHcb99tdUACmj6U" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,14 +68,17 @@
     "Application.Main.executor": "Run",
     "Application.Server.executor": "Run",
     "Application.test.executor": "Run",
+    "JUnit.ClientTest.executor": "Run",
+    "JUnit.LoginTest.executor": "Run",
+    "JUnit.StatusUpdateTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/city/Desktop/java/multi-client-billing-network",
+    "last_opened_file_path": "F:/new downloads/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5011494"
   }
 }]]></component>
   <component name="RunManager">
@@ -167,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733442494710</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added the bill_status_update in employee">
+      <option name="closed" value="true" />
+      <created>1733450237827</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733450237827</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,6 +194,7 @@
     <MESSAGE value="added change Password functionality in employee" />
     <MESSAGE value="added the functionalites  of employee" />
     <MESSAGE value="added the viewBill  in employee" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the viewBill  in employee" />
+    <MESSAGE value="added the bill_status_update in employee" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the bill_status_update in employee" />
   </component>
 </project>

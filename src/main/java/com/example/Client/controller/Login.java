@@ -44,43 +44,58 @@ public class Login {
             return;
         }
 
-        // Create Employee object with user input
-        Employee employee = new Employee(username, password);
+        // Handle business logic
+        String response = processLogin(username, password);
 
+        // GUI behavior based on response
+        if ("Login successful!".equals(response)) {
+            showAlert(Alert.AlertType.INFORMATION, "Success", "Login successful!");
+            switchToEmployeePage(actionEvent);
+        } else if ("Invalid credentials. Please try again.".equals(response)) {
+            showAlert(Alert.AlertType.ERROR, "Failure", "Invalid credentials. Please try again.");
+        } else if (response.startsWith("Error")) {
+            showAlert(Alert.AlertType.ERROR, "Error", response);
+        } else {
+            showAlert(Alert.AlertType.WARNING, "Warning", "Unexpected server response: " + response);
+        }
+    }
+
+    // Extracted business logic for login processing
+    public String processLogin(String username, String password) {
         try {
-            // Send Employee object to the server
+            Employee employee = new Employee(username, password);
             output.writeObject(employee);
             output.flush();
+
             System.out.println("Employee object sent to the server.");
 
-            // Handle server response
             Object response = input.readObject();
             if (response instanceof String) {
-                String serverResponse = (String) response;
-                if ("Login successful!".equals(serverResponse)) {
-                    showAlert(Alert.AlertType.INFORMATION, "Success", "Login successful!");
-
-                    // Load emp.fxml after successful login
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/emp.fxml"));
-                    Parent root = loader.load();
-
-                    // Pass the connection to emp controller
-                    emp empController = loader.getController();
-                    empController.setConnection(socket, output, input);
-
-                    // Switch the scene
-                    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                } else if ("Invalid credentials. Please try again.".equals(serverResponse)) {
-                    showAlert(Alert.AlertType.ERROR, "Failure", "Invalid credentials. Please try again.");
-                } else {
-                    showAlert(Alert.AlertType.WARNING, "Warning", "Unexpected server response: " + serverResponse);
-                }
+                return (String) response;
+            } else {
+                return "Error: Invalid response from server.";
             }
         } catch (IOException | ClassNotFoundException e) {
-            showAlert(Alert.AlertType.ERROR, "Error", "Error during login: " + e.getMessage());
-            System.err.println("Error during login: " + e.getMessage());
+            e.printStackTrace();
+            return "Error during login: " + e.getMessage();
+        }
+    }
+
+    // GUI method to switch to emp.fxml
+    private void switchToEmployeePage(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/emp.fxml"));
+            Parent root = loader.load();
+
+            emp empController = loader.getController();
+            empController.setConnection(socket, output, input);
+
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Error", "Failed to load employee page: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -93,3 +108,4 @@ public class Login {
         alert.showAndWait();
     }
 }
+
