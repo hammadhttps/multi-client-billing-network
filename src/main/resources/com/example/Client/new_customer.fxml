@@ -1,8 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="628.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Client.controller.NewCustomer">
-
+<AnchorPane prefHeight="700.0" prefWidth="900.0" stylesheets="@style1.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Client.controller.NewCustomer">
+   <children>
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="800.0" spacing="20.0">
+         <children>
+            <!-- Title -->
+            <Label styleClass="title" text="Add New Customer">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            
+            <!-- Form Container -->
+            <ScrollPane fitToWidth="true" prefHeight="500.0" prefWidth="750.0">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <!-- Customer ID -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="Customer ID:" />
+                              <TextField fx:id="customerIdField" prefWidth="200.0" promptText="4-digit ID" />
+                              <Label styleClass="info-label" text="(4 digits only)" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- CNIC -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="CNIC:" />
+                              <TextField fx:id="cnicField" prefWidth="200.0" promptText="13-digit CNIC" />
+                              <Label styleClass="info-label" text="(13 digits without dashes)" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- Name -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="Full Name:" />
+                              <TextField fx:id="nameField" prefWidth="300.0" promptText="Enter full name" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- Address -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="Address:" />
+                              <TextField fx:id="addressField" prefWidth="350.0" promptText="Enter complete address" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- Phone -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="Phone Number:" />
+                              <TextField fx:id="phoneField" prefWidth="200.0" promptText="10-11 digits" />
+                              <Label styleClass="info-label" text="(without country code)" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- Customer Type -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="Customer Type:" />
+                              <ComboBox fx:id="customerTypeCombo" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- Meter Type -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="Meter Type:" />
+                              <ComboBox fx:id="meterTypeCombo" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- Connection Date -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label minWidth="150.0" text="Connection Date:" />
+                              <DatePicker fx:id="connectionDatePicker" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            
+            <!-- Buttons -->
+            <HBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <Button fx:id="submitButton" onAction="#handleSubmit" prefWidth="120.0" styleClass="primary-button" text="Add Customer" />
+                  <Button fx:id="backButton" onAction="#handleBack" prefWidth="120.0" styleClass="secondary-button" text="Back" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
 </AnchorPane>

@@ -40,9 +40,18 @@ public class emp {
         stage.show();
     }
 
-    public void add_new_customer(ActionEvent actionEvent)
-    {
+    public void add_new_customer(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Client/new_customer.fxml"));
+        Parent root = loader.load();
 
+        // Pass the connection to new customer controller
+        NewCustomer controller = loader.getController();
+        controller.setConnection(socket, output, input);
+
+        // Switch the scene
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     public void update_customer_data(ActionEvent actionEvent)
